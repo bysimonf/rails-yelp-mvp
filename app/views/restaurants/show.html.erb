@@ -3,7 +3,14 @@
 <p><%= @restaurant.address %></p>
 <p><%= @restaurant.category %></p>
 
-<%= link_to "Add rating", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+<%# <%= link_to "Add rating", new_restaurant_path(@restaurant), class: "btn btn-primary" %>
+
+<h2>Please add a new review for <%=@restaurant.name %>:</h2>
+<%= simple_form_for [@restaurant, @review] do |f| %>
+  <%= f.input :content %>
+  <%= f.input :rating %>
+  <%= f.submit class: "btn btn-success" %>
+<% end %>
 
 <div class="card my-3">
   <div class="card-header fw-bold">Ratings:</div>
