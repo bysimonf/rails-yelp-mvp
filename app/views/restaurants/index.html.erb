@@ -2,11 +2,14 @@
 
 <%= link_to "Add new restaurant", new_restaurant_path, class: "btn btn-primary"%>
 
-<div>
+<div class="cards pt-3">
   <% @restaurants.each do |restaurant| %>
-    <h2><%= restaurant.name %></h2>
-    <p><%= restaurant.address %></p>
-    <%= link_to "See details", restaurant_path(restaurant), class: "btn btn-primary"%>
-    <hr>
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title"><%= restaurant.name %></h2>
+        <p class="card-text"><%= restaurant.address %></p>
+        <%= link_to "See details", restaurant_path(restaurant), class: "btn btn-primary"%>
+      </div>
+    </div>
   <% end %>
 </div>

@@ -5,13 +5,13 @@
 
 <%= link_to "Add rating", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
 
-<div>
-  <p>Ratings:</p>
-  <ul class="list-group">
+<div class="card my-3">
+  <div class="card-header fw-bold">Ratings:</div>
+    <ul class="list-group list-group-flush">
     <% @restaurant.reviews.each do |review| %>
       <li class="list-group-item"><%= review.content %> | Rating: <%= review.rating %></li>
     <% end %>
-  </ul>
+    </ul>
 </div>
 
 <%= link_to "Back to overview", restaurants_path, class: "btn btn-secondary" %>
